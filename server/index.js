@@ -1,15 +1,18 @@
-//index.js
-
 const express = require('express');
-const app = express();
 const cors = require('cors');
+const routes = require('./routes');
 
-app.use(cors())
+const app = express();
+app.use(cors({
+  origin: '*',
+}));
 
-app.get('/', (req, res) => {
-      res.send('Hello from our server!')
-})
+// We use express to define our various API endpoints and
+// provide their handlers that we implemented in routes.js
+app.get('/', routes.coins);
 
 app.listen(8080, () => {
       console.log('server listening on port 8080')
-})
+});
+
+module.exports = app;
