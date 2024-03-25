@@ -16,7 +16,6 @@ export default function HomePage() {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Name</th>
                         <th>Symbol</th>
                         <th>Max Supply</th>
@@ -32,7 +31,6 @@ export default function HomePage() {
                 <tbody>
                     {tableData.map(row => (
                         <tr key={row.id}>
-                            <td>{row.id}</td>
                             <td>{row.name}</td>
                             <td>{row.symbol}</td>
                             <td>{row.maxSupply}</td>
